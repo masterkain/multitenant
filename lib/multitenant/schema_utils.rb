@@ -61,6 +61,7 @@ module Multitenant
       end
 
       def schema_exists?(schema_name)
+        ap schema_name
         all_schemas.include?(schema_name)
       end
 
