@@ -65,7 +65,7 @@ module Multitenant
       end
 
       def all_schemas
-        connection.select_values("SELECT * FROM pg_namespace WHERE nspname != 'information_schema' AND nspname NOT LIKE 'pg%'")
+        connection.select_values("SELECT nspname FROM pg_catalog.pg_namespace WHERE nspname != 'information_schema' AND nspname NOT LIKE 'pg%'")
       end
 
       def with_all_schemas
